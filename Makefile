@@ -32,3 +32,9 @@ out: all
 	$(MAKE) load
 	sudo ./client > out
 	$(MAKE) unload
+ 
+plot: all
+	$(MAKE) unload
+	$(MAKE) load
+	@python3 scripts/driver.py
+	$(MAKE) unload
